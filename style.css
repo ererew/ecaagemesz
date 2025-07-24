@@ -1,124 +1,81 @@
 body {
+  margin: 0;
+  background: linear-gradient(120deg, #eecaff 0%, #ffb6d5 100%);
   min-height: 100vh;
   font-family: 'Space Grotesk', Arial, sans-serif;
-  color: #90106e;
-  margin: 0;
-  padding: 0;
+  position: relative;
   overflow-x: hidden;
-  background: linear-gradient(-45deg, #ffb6d5, #ffe3ee, #d8b4fe, #f8c9f5);
-  background-size: 300% 300%;
-  animation: gradientMove 13s ease-in-out infinite;
 }
-@keyframes gradientMove {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-#bubble-bg {
+.bg-pink {
   position: fixed;
-  left: 0; top: 0;
-  width: 100vw; height: 100vh;
+  width: 100vw; height: 40vh;
+  top: 0; left: 0; right: 0;
+  background: radial-gradient(ellipse at center, #fbd2fc 60%, #eecaff 100%);
   z-index: 0;
-  pointer-events: none;
 }
-
 .container {
   position: relative;
   z-index: 2;
-  max-width: 440px;
-  margin: 4rem auto 2.5rem auto;
-  background: rgba(255,255,255,0.94);
-  border-radius: 29px;
-  box-shadow: 0 10px 54px #fc6cac2a;
+  max-width: 800px;
+  margin: 4.5rem auto 2.5rem auto;
+  background: #fff;
+  border-radius: 2.3em;
+  box-shadow: 0 7px 42px #fc6cac26;
   text-align: center;
-  padding: 2.6rem 1.8rem 2.3rem 1.8rem;
-  backdrop-filter: blur(3.5px);
-  overflow: hidden;
+  padding: 5.2rem 1.9rem 2.8rem 1.9rem; /* padding-top besar untuk tempat avatar */
+  min-height: 320px;
 }
-
-/* Border love di sudut */
 .love-corner {
   position: absolute;
-  font-size: 2.1rem;
+  font-size: 2.45rem;
   z-index: 6;
   pointer-events: none;
-  filter: drop-shadow(0 0 5px #ff8fcf88);
+  filter: drop-shadow(0 0 7px #ff8fcf88);
 }
-.love-tl { left: 0.7rem; top: 0.37rem; transform: rotate(-16deg);}
-.love-tr { right: 0.7rem; top: 0.37rem; transform: rotate(16deg);}
-.love-bl { left: 0.7rem; bottom: 0.37rem; transform: rotate(15deg);}
-.love-br { right: 0.7rem; bottom: 0.37rem; transform: rotate(-13deg);}
-
+.love-tl { left: 1.5rem; top: 0.7rem; }
+.love-tr { right: 1.5rem; top: 0.7rem;}
+.love-bl { left: 1.5rem; bottom: 0.7rem;}
+.love-br { right: 1.5rem; bottom: 0.7rem;}
 .avatar {
-  width: 102px; height: 102px;
+  width: 110px; height: 110px;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: -60px;
-  border: 5px solid #fff0fa;
-  box-shadow: 0 3px 18px #ffbee7a6;
+  border: 7px solid #fff0fa;
+  box-shadow: 0 3px 22px #ffbee7a6;
   background: #fff;
-  margin-bottom: 1.2rem;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  left: 0; right: 0; /* center horizontal */
+  top: -55px;         /* mengambang di atas container */
+  z-index: 10;
+  transition: box-shadow .22s;
 }
-
+.avatar:hover {
+  box-shadow: 0 0 38px #fb85d4, 0 5px 22px #f7c8e9;
+}
 .judul {
-  font-family: 'Pacifico', 'Space Grotesk', Arial, sans-serif;
-  font-size: 2.17rem;
-  color: #F553AF;
-  margin-bottom: 2rem;
+  margin-top: 3.7rem; /* tambahkan ruang di bawah foto */
+  margin-bottom: 1.8rem;
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
   font-weight: 700;
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #fc5fa2 45%, #8b73e6 90%);
+  letter-spacing: 2.2px;
+  background: linear-gradient(90deg, #ff6da7 40%, #b38dff 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
-}
-
-.lyrics {
-  min-height: 220px;
-  font-size: 1.13rem;
-  font-weight: 500;
-  color: #8b1869;
-  margin-top: 1rem;
-  text-align: center;
-  font-family: 'Space Grotesk', Arial, sans-serif;
-}
-.lyric-line {
-  margin: 1em 0;
-  font-size: 1.13em;
-  font-family: inherit;
-  font-weight: 600;
   display: inline-block;
-  background: #fff5fa;
-  border-radius: 14px;
-  padding: 0.38em 1em;
-  box-shadow: 0 2px 10px #fd6cac0a;
-  min-width: 90px;
-  letter-spacing: 1px;
-  animation: lyric-in 0.7s;
+  line-height: 1.2;
 }
-@keyframes lyric-in {
-  from { opacity:0; transform: translateY(16px);}
-  to { opacity:1; transform: none;}
-}
-.caret {
-  display: inline-block;
-  width: 10px;
-  height: 1.12em;
+.love-purple {
+  font-size: 1.3em;
   vertical-align: middle;
-  background: linear-gradient(90deg,#ff83d3 40%,#d8b4fe 100%);
-  border-radius: 3px;
-  margin-left: 2px;
-  animation: blink 0.88s infinite;
 }
-@keyframes blink {
-  0%, 100% { opacity:1; }
-  45%, 55% { opacity:0; }
-}
-
 @media (max-width: 520px) {
-  .container { padding: 1.02rem 0.17rem 1.4rem 0.17rem;}
-  .judul { font-size: 1.13rem;}
-  .avatar { width: 70px; height: 70px; }
-  .lyrics { font-size: 0.98rem;}
+  .container { padding: 5.2rem 0.3rem 1.5rem 0.3rem;}
+  .avatar { width: 72px; height: 72px; top: -38px;}
+  .judul { font-size: 1.13rem; margin-top: 2.4rem;}
+  .love-corner { font-size: 1.28rem;}
 }
