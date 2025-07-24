@@ -4,24 +4,25 @@
   <meta charset="UTF-8" />
   <title>Untuk Kamu yang Tersayang 💗</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- FONT: Space Grotesk (Gen Z), Pacifico -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Pacifico&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bg-pink"></div>
+  <canvas id="bubble-bg"></canvas>
   <div class="container">
-    <!-- Icon love di sudut -->
+    <!-- Border love di sudut -->
     <div class="love-corner love-tl">❤️</div>
     <div class="love-corner love-tr">❤️</div>
     <div class="love-corner love-bl">❤️</div>
     <div class="love-corner love-br">❤️</div>
-    <!-- Foto profil, floating -->
+    <!-- Foto -->
     <img src="foto-pacar.jpeg" class="avatar" alt="Pacarku">
-    <!-- Judul gradient -->
-    <h1 class="judul">
-      Untuk Kamu yang Tersayang <span class="love-purple">💜</span>
-    </h1>
-    <!-- ... tambahkan lirik, animasi, dll di bawah sini -->
+    <h1 class="judul">Untuk Kamu yang Tersayang 💗</h1>
+    <div id="lyrics-box" class="lyrics"></div>
+    <!-- Musik otomatis play -->
+    <audio id="bgm" src="music.mp3" autoplay loop></audio>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
